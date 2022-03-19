@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -17,7 +16,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.index',['posts'=>Post::all()]);
+        return view('posts.index',[
+            'posts'=>Post::all()
+        ]);
     }
 
     /**
@@ -87,7 +88,8 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-        $data = $request->only(['name','description']);
+//        dd($request->all());
+        $data = $request->only(['name','description','category_id']);
         if ($request->hasFile('img'))
         {
             $img = $request->img->store('images','public');

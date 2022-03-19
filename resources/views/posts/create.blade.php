@@ -35,9 +35,10 @@
                         <img src="{{ asset('storage/' . $post->img) }}" style="width: 100%" />
                     </div>
                 @endif
+                <input type="hidden" id="" name="img" value="{{$post->img}}">
                 <div class="form-group">
                     <label for="Post">Image : </label>
-                    <input type="file" name="img" class="form-control " value="">
+                    <input type="file" name="img" class="form-control " value="{{isset($post) ? $post->img : ''}}">
                 </div>
                 @error('description')
                 <div class="alert alert-danger">
@@ -45,13 +46,16 @@
                 </div>
                 @enderror
                 <div class="form-group">
+                    @php(dd(old('category_id')))
                     <label for="selectCategory">Select Category : </label>
                     <select class="form-select" name="category_id">
-                        <option selected>Open this select menu</option>
                         @foreach ($categories as $category)
-                            <option selected value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option @if (old('category_id') == $category->id)
+                                    selected="selected"
+                                    @endif value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
+
                 </div>
                 <div class="form-group">
                     <button class="btn btn-success mt-2">

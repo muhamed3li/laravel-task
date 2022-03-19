@@ -14,10 +14,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
     /**
      * Show the application dashboard.
@@ -32,8 +32,7 @@ class HomeController extends Controller
     public function show(Post $post)
     {
           return view('welcome', [
-          'posts' => Post::all(),
-          'category' => Category::all(),
+          'posts' => Post::whereHas('category')->paginate(5),
         ]);
     }
 
