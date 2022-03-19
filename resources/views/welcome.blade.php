@@ -55,6 +55,8 @@
 
 
 
-
+{{--        <div class="">--}}
+{{--            {{ $posts->links()}}--}}
+{{--        </div>--}}
 
 @include('layouts.footer')

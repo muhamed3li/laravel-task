@@ -49,7 +49,7 @@
             </table>
         @else
             <div class="text-center py-3">
-                <h1>No Categories Yet.</h1>
+                <h1>No Posts Yet.</h1>
             </div>
         @endif
     </div>

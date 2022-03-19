@@ -35,7 +35,7 @@
                         <img src="{{ asset('storage/' . $post->img) }}" style="width: 100%" />
                     </div>
                 @endif
-                <input type="hidden" id="" name="img" value="{{$post->img}}">
+                <input type="hidden" id="" name="img" value="{{isset($post) ? $post->img : ''}}">
                 <div class="form-group">
                     <label for="Post">Image : </label>
                     <input type="file" name="img" class="form-control " value="{{isset($post) ? $post->img : ''}}">
@@ -46,7 +46,7 @@
                 </div>
                 @enderror
                 <div class="form-group">
-                    @php(dd(old('category_id')))
+{{--                    @php(dd(old('category_id')))--}}
                     <label for="selectCategory">Select Category : </label>
                     <select class="form-select" name="category_id">
                         @foreach ($categories as $category)
@@ -55,7 +55,6 @@
                                     @endif value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
-
                 </div>
                 <div class="form-group">
                     <button class="btn btn-success mt-2">

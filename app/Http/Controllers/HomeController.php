@@ -32,7 +32,7 @@ class HomeController extends Controller
     public function show(Post $post)
     {
           return view('welcome', [
-          'posts' => Post::whereHas('category')->paginate(5),
+          'posts' => Post::whereHas('category')->paginate(6),
         ]);
     }
 

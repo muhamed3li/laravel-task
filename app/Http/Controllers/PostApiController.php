@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
+use App\Http\Requests\PostRequest;
+use App\Http\Resources\PostResource;
+use App\Models\Post;
 
-class UserController extends Controller
+class PostApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,20 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index')->with('users',User::all());
-    }
-
-    public function makeAdmin(User $user)
-    {
-        $user->role = 'admin';
-        $user->save();
-        return redirect(route('users.index'));
-    }
-    public function makeUser(User $user)
-    {
-        $user->role = 'user';
-        $user->save();
-        return redirect(route('users.index'));
+        $posts = Post::paginate(10);
+        return PostResource::collection($posts);
     }
 
     /**
@@ -46,9 +35,11 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        $post = Post::create($request->all());
+        return response()->json(["status" => "success", "data"=> new PostResource($post)], 200);
+
     }
 
     /**
@@ -59,7 +50,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return response()->json(["status" => "success", "data"=> new PostResource($post)], 200);
     }
 
     /**
@@ -80,9 +72,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $post->update($request->all());
+        return response()->json(["status" => "success", "data"=> new PostResource($post)], 200);
+
     }
 
     /**
@@ -91,10 +85,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Post $post)
     {
-        $user->delete();
-        session()->flash('success','User Deleted successfuly');
-        return redirect(route('users.index'));
+        if ($post->delete())
+        {
+            return response()->json(["status" => "success", "data"=> new PostResource($user)], 200);
+        }else
+        {
+            return response()->json(["status" => "error not found"], 500);
+        }
     }
 }

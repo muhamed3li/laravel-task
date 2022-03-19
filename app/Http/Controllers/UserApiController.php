@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\PostResource;
-use App\Models\Post;
-use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+use App\Http\Resources\UserResource;
+use App\Models\User;
 
-class ApiController extends Controller
+class UserApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ApiController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(10);
-        return PostResource::collection($posts);
+        $users = User::paginate(10);
+        return UserResource::collection($users);
     }
 
     /**
@@ -35,15 +35,11 @@ class ApiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        $post = new Post();
-        $post->title = $request->title;
-        $post->body = $request->body;
-        if ($post->save())
-        {
-            return new PostResource($post);
-        }
+        $user = User::create($request->all());
+        return response()->json(["status" => "success", "data"=> new UserResource($user)], 200);
+
     }
 
     /**
@@ -54,8 +50,8 @@ class ApiController extends Controller
      */
     public function show($id)
     {
-        $post = Post::findOrFail($id);
-        return new PostResource($post);
+        $user = User::findOrFail($id);
+        return response()->json(["status" => "success", "data"=> new UserResource($user)], 200);
     }
 
     /**
@@ -76,15 +72,11 @@ class ApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, User $user)
     {
-        $post = Post::findOrFail($id);
-        $post->title = $request->title;
-        $post->body = $request->body;
-        if ($post->save())
-        {
-            return new PostResource($post);
-        }
+        $user->update($request->all());
+        return response()->json(["status" => "success", "data"=> new UserResource($user)], 200);
+
     }
 
     /**
@@ -93,12 +85,14 @@ class ApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $post = Post::findOrFail($id);
-        if ($post->delete())
+        if ($user->delete())
         {
-            return new PostResource($post);
+            return response()->json(["status" => "success", "data"=> new UserResource($user)], 200);
+        }else
+        {
+            return response()->json(["status" => "error not found"], 500);
         }
     }
 }

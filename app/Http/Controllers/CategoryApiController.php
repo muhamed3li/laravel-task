@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
+use App\Http\Requests\CategoryRequest;
+use App\Http\Resources\CategoryResource;
+use App\Models\Category;
 
-class UserController extends Controller
+class CategoryApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,20 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index')->with('users',User::all());
-    }
-
-    public function makeAdmin(User $user)
-    {
-        $user->role = 'admin';
-        $user->save();
-        return redirect(route('users.index'));
-    }
-    public function makeUser(User $user)
-    {
-        $user->role = 'user';
-        $user->save();
-        return redirect(route('users.index'));
+        $categories = Category::paginate(10);
+        return CategoryResource::collection($categories);
     }
 
     /**
@@ -46,9 +35,11 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        $category = Category::create($request->all());
+        return response()->json(["status" => "success", "data"=> new CategoryResource($category)], 200);
+
     }
 
     /**
@@ -59,7 +50,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return response()->json(["status" => "success", "data"=> new CategoryResource($category)], 200);
     }
 
     /**
@@ -80,9 +72,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request,Category $category)
     {
-        //
+//        dd($request->all());
+        $category->update($request->all());
+        return response()->json(["status" => "success", "data"=> new CategoryResource($category)], 200);
+
     }
 
     /**
@@ -91,10 +86,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Category $category)
     {
-        $user->delete();
-        session()->flash('success','User Deleted successfuly');
-        return redirect(route('users.index'));
+        if ($category->delete())
+        {
+            return response()->json(["status" => "success", "data"=> new CategoryResource($category)], 200);
+        }else
+        {
+            return response()->json(["status" => "error not found"], 500);
+        }
     }
 }
