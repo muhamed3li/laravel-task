@@ -1,4 +1,6 @@
-!public/storage/images/*
+!public/
+!public/storage/
+!public/storage/images/
 /node_modules
 /public/hot
 
