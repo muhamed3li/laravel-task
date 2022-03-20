@@ -1,9 +1,6 @@
-!public/
-!public/storage/
 !public/storage/images/
 /node_modules
 /public/hot
-
 /vendor
 .env
 .env.backup
