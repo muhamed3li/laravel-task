@@ -10,6 +10,8 @@ php artisan migrate
 
 php artisan db:seed
 
+php artisan storage:link
+
 php artisan serve
 
 **To solve the '/images' path problem, you must add images before the path.**
