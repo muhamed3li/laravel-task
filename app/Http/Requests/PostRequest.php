@@ -30,5 +30,7 @@ class PostRequest extends FormRequest
             'img'=>'required',
             'category_id'=>'required',
         ];
+//                dd($this->all());
+
     }
 }

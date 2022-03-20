@@ -8,6 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/templatemo-xtra-blog.css')}}" rel="stylesheet">
+    <style >
+        svg{
+            height: 10px ;
+        }
+    </style>
 
 </head>
 <body>

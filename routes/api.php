@@ -34,7 +34,5 @@ Route::post('categories/{category}',[CategoryApiController::class,'update']);
 Route::delete('categories/{id}',[CategoryApiController::class,'destroy']);
 
 Route::get('users',[UserApiController::class,'index']);
-Route::post('user',[UserApiController::class,'store']);
 Route::get('users/{id}',[UserApiController::class,'show']);
-Route::post('users/{user}',[UserApiController::class,'update']);
 Route::delete('users/{id}',[UserApiController::class,'destroy']);

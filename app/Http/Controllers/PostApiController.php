@@ -74,6 +74,7 @@ class PostApiController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
+//        dd($request->all());
         $post->update($request->all());
         return response()->json(["status" => "success", "data"=> new PostResource($post)], 200);
 

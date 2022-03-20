@@ -40,7 +40,7 @@
                     </p>
                     <div class="d-flex justify-content-between tm-pt-45">
                         <span class="tm-color-primary">{{$post->category->name}}</span>
-                        <span class="tm-color-primary">{{$post->created_at}}</span>
+                        <span class="tm-color-primary">{{$post->created_at->format('Y/m/d')}}</span>
                     </div>
                     <hr>
 {{--                    <div class="d-flex justify-content-between">--}}
@@ -55,8 +55,8 @@
 
 
 
-{{--        <div class="">--}}
-{{--            {{ $posts->links()}}--}}
-{{--        </div>--}}
+        <div class="" style="font-size:20px ">
+            {{ $posts->links()}}
+        </div>
 
 @include('layouts.footer')

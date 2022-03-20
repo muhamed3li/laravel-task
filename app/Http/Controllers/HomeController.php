@@ -42,7 +42,7 @@ class HomeController extends Controller
         $posts = Post::query()
             ->where('name', 'LIKE', "%{$search}%")
             ->orWhere('description', 'LIKE', "%{$search}%")
-            ->get();
+            ->paginate(6);
         return view('welcome', compact('posts'));
     }
 

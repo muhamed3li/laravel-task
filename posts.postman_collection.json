@@ -1,0 +1,1116 @@
+{
+	"info": {
+		"_postman_id": "506ef5a7-7f26-40f6-8dd2-079f9a8bf0b0",
+		"name": "posts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/categories",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 15:59:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 15:59:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"category 1\",\n            \"created_at\": \"2022-03-19T15:42:37.000000Z\",\n            \"updated_at\": \"2022-03-19T15:42:37.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"category 2\",\n            \"created_at\": \"2022-03-19T15:54:59.000000Z\",\n            \"updated_at\": \"2022-03-19T15:54:59.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"category 3\",\n            \"created_at\": \"2022-03-19T15:56:30.000000Z\",\n            \"updated_at\": \"2022-03-19T15:56:30.000000Z\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/categories?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/categories?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/categories?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/categories\",\n        \"per_page\": 10,\n        \"to\": 3,\n        \"total\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "category 4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/category",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 16:01:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 16:01:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"name\": \"category 4\",\n        \"updated_at\": \"2022-03-19T16:01:00.000000Z\",\n        \"created_at\": \"2022-03-19T16:01:00.000000Z\",\n        \"id\": 4\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/categories/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 16:01:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 16:01:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"category 1\",\n        \"created_at\": \"2022-03-19T15:42:37.000000Z\",\n        \"updated_at\": \"2022-03-19T15:42:37.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/categories/4",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"categories",
+										"4"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 16:04:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 16:04:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "categoty 1 edit",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/categories/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 16:19:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 16:19:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"categoty 1 edit\",\n        \"created_at\": \"2022-03-19T15:42:37.000000Z\",\n        \"updated_at\": \"2022-03-19T16:19:30.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/posts",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 16:24:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 16:24:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"post\",\n            \"description\": \"desc\",\n            \"img\": \"images/pwoUDuJuPSYDWcjiiAGVGxu8dO6GpB0CzRZN83RN.jpg\",\n            \"category_id\": 3,\n            \"created_at\": \"2022-03-19T15:55:12.000000Z\",\n            \"updated_at\": \"2022-03-19T16:22:11.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Aut natus vel id cupiditate.\",\n            \"description\": \"Atque eligendi tempora qui odio eius fuga aut. Consequatur dignissimos perferendis dolores officiis non. Natus vel sint maxime velit qui in qui. Occaecati voluptatem sed molestiae aut maxime. Neque nulla mollitia occaecati sed. Mollitia dolor ratione molestiae voluptatem.\",\n            \"img\": \"images/ff3e961c3cce7e477a664e787e5469df.png\",\n            \"category_id\": 2,\n            \"created_at\": \"2022-03-19T15:56:48.000000Z\",\n            \"updated_at\": \"2022-03-19T15:56:48.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Voluptatem fugit aut ut ab.\",\n            \"description\": \"In dolorem eaque perferendis. Consequuntur ut quas doloremque perspiciatis consequatur ullam. Rem laborum accusamus eum velit ea. Omnis optio reprehenderit quaerat voluptates vitae. Unde sequi dolor harum aut illo architecto id. Nihil consequatur ducimus aut non qui atque et numquam.\",\n            \"img\": \"2840355eed4cdee58c94cb44eaa54677.png\",\n            \"category_id\": 1,\n            \"created_at\": \"2022-03-19T15:56:48.000000Z\",\n            \"updated_at\": \"2022-03-19T15:56:48.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Quaerat in est et.\",\n            \"description\": \"Et rem et similique maxime ut ad dolorem. Ullam quisquam architecto ex. Rerum repudiandae nam alias sed aut ipsa facere. Suscipit ut incidunt harum voluptatibus.\",\n            \"img\": \"61c292a31e9ed60dd46550bc909c82cd.png\",\n            \"category_id\": 3,\n            \"created_at\": \"2022-03-19T15:56:48.000000Z\",\n            \"updated_at\": \"2022-03-19T15:56:48.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Amet quia aut culpa non quia.\",\n            \"description\": \"Et cumque harum facilis. Accusantium eaque vitae possimus hic velit. Libero rerum voluptatum explicabo nihil alias. Omnis veniam reiciendis voluptas hic reiciendis.\",\n            \"img\": \"5bbbd5c01b6a31aa3d04e5d4bab5b626.png\",\n            \"category_id\": 1,\n            \"created_at\": \"2022-03-19T15:56:48.000000Z\",\n            \"updated_at\": \"2022-03-19T15:56:48.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Omnis aliquid eligendi odio.\",\n            \"description\": \"In ratione natus voluptatem modi voluptatibus commodi aspernatur. Autem aut qui porro aut cum. Perspiciatis a nam vel veniam natus. Nemo hic possimus vitae nihil.\",\n            \"img\": \"c761a54249b0435b82dff933f79b4b50.png\",\n            \"category_id\": 2,\n            \"created_at\": \"2022-03-19T15:56:48.000000Z\",\n            \"updated_at\": \"2022-03-19T15:56:48.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Consequatur totam non quo.\",\n            \"description\": \"Modi rerum et reiciendis ullam iste reiciendis itaque debitis. Ipsum quaerat impedit qui est consequatur fuga ut quo. Nesciunt beatae repellendus beatae similique ipsa accusantium eum.\",\n            \"img\": \"c3fa3c84fb8005d3c10aac0642ab8955.png\",\n            \"category_id\": 3,\n            \"created_at\": \"2022-03-19T15:56:48.000000Z\",\n            \"updated_at\": \"2022-03-19T15:56:48.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Totam voluptatem et delectus.\",\n            \"description\": \"Inventore facilis eaque veritatis et. Nemo itaque qui minima omnis autem rerum. Eveniet at voluptas sint ut. Vero excepturi et rerum sint. Voluptatem nostrum dicta aut quia debitis quia adipisci.\",\n            \"img\": \"492978c3093449fafe3e17f68a8e2612.png\",\n            \"category_id\": 1,\n            \"created_at\": \"2022-03-19T15:56:48.000000Z\",\n            \"updated_at\": \"2022-03-19T15:56:48.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Id ut minus impedit.\",\n            \"description\": \"Corrupti doloribus aliquam doloremque quod natus ut. Sunt dolorem harum harum quia in provident. Cupiditate fugit consequatur nihil amet nisi. Voluptas doloribus numquam consequatur. Facere vel aut et. Quia amet aspernatur temporibus eaque eaque dignissimos porro.\",\n            \"img\": \"02ebc89751a11c31a056e3414216f702.png\",\n            \"category_id\": 2,\n            \"created_at\": \"2022-03-19T15:56:48.000000Z\",\n            \"updated_at\": \"2022-03-19T15:56:48.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Voluptas tenetur aut in sit.\",\n            \"description\": \"Corrupti nesciunt facilis fugiat in odit. Non et repudiandae sint qui. Assumenda exercitationem voluptatem laborum excepturi dolorem fugiat consectetur est. Iure fuga necessitatibus error magni totam eos eos.\",\n            \"img\": \"674f9ab87cb862771a1a8e1b08804537.png\",\n            \"category_id\": 3,\n            \"created_at\": \"2022-03-19T15:56:48.000000Z\",\n            \"updated_at\": \"2022-03-19T15:56:48.000000Z\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/posts?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/posts?page=3\",\n        \"prev\": null,\n        \"next\": \"http://127.0.0.1:8000/api/posts?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 3,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/posts?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/posts?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/posts?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/posts?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/posts\",\n        \"per_page\": 10,\n        \"to\": 10,\n        \"total\": 21\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "post",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "description post",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"value": "pwoUDuJuPSYDWcjiiAGVGxu8dO6GpB0CzRZN83RN.jpg",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/post",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"post"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 01:35:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 01:35:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"name\": \"post\",\n        \"description\": \"description post\",\n        \"img\": \"pwoUDuJuPSYDWcjiiAGVGxu8dO6GpB0CzRZN83RN.jpg\",\n        \"category_id\": \"1\",\n        \"updated_at\": \"2022-03-20T01:35:49.000000Z\",\n        \"created_at\": \"2022-03-20T01:35:49.000000Z\",\n        \"id\": 24\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/posts/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"posts",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 01:36:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 01:36:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"post\",\n        \"description\": \"desc\",\n        \"img\": \"images/ff3e961c3cce7e477a664e787e5469df.png\",\n        \"category_id\": 3,\n        \"created_at\": \"2022-03-19T15:55:12.000000Z\",\n        \"updated_at\": \"2022-03-19T16:22:11.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/posts/24",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"posts",
+										"24"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 01:36:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 01:36:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "post edit",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "description post edit",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"value": "images/ff3e961c3cce7e477a664e787e5469df.png",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/posts/23",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"posts",
+										"23"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 01:39:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 01:39:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 23,\n        \"name\": \"post edit\",\n        \"description\": \"description post edit\",\n        \"img\": \"images/ff3e961c3cce7e477a664e787e5469df.png\",\n        \"category_id\": \"2\",\n        \"created_at\": \"2022-03-20T01:35:27.000000Z\",\n        \"updated_at\": \"2022-03-20T01:39:23.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 19:00:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Mar 2022 19:00:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"mohamed ali\",\n            \"email\": \"muhamedali.dev@gmail.com\",\n            \"role\": \"admin\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2022-03-19T18:50:35.000000Z\",\n            \"updated_at\": \"2022-03-19T18:50:35.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"user 1\",\n            \"email\": \"user1@gmail.com\",\n            \"role\": \"user\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2022-03-19T18:51:26.000000Z\",\n            \"updated_at\": \"2022-03-19T18:51:26.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"user 2\",\n            \"email\": \"user2@gmail.com\",\n            \"role\": \"user\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2022-03-19T18:51:44.000000Z\",\n            \"updated_at\": \"2022-03-19T18:51:44.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"user 3\",\n            \"email\": \"user3@gmail.com\",\n            \"role\": \"user\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2022-03-19T18:52:02.000000Z\",\n            \"updated_at\": \"2022-03-19T18:52:02.000000Z\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/users?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/users?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/users\",\n        \"per_page\": 10,\n        \"to\": 4,\n        \"total\": 4\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 02:00:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 02:00:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"mohamed ali\",\n        \"email\": \"muhamedali.dev@gmail.com\",\n        \"role\": \"admin\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2022-03-19T18:50:35.000000Z\",\n        \"updated_at\": \"2022-03-20T01:06:25.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users/6",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"6"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 02:01:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Mar 2022 02:01:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error not found\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

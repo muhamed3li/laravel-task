@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserApiController extends Controller
 {
@@ -35,10 +35,8 @@ class UserApiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
+    public function store(Request $request)
     {
-        $user = User::create($request->all());
-        return response()->json(["status" => "success", "data"=> new UserResource($user)], 200);
 
     }
 
