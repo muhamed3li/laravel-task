@@ -22,14 +22,14 @@ php artisan serve
 <br>
 Email: admin@admin.com
 <br>
-Password: password
+Password: 123456
 <br>**
 <br>
 **User account :
 <br>
 Email: user@user.com
 <br>
-Password: password
+Password: 123456
 <br>**
 
 
