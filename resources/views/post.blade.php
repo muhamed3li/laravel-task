@@ -26,7 +26,7 @@
                         <h2 class="pt-2 tm-color-primary tm-post-title">{{$post->name}}</h2>
                         <p>{{$post->description}}</p>
                         <hr>
-                        <p class="tm-mb-40">{{$post->created_at}}</p>
+                        <p class="tm-mb-40">{{$post->created_at->format('Y/m/d')}}</p>
                         <div class="row tm-row tm-mt-100 tm-mb-75">
                             <div class="tm-prev-next-wrapper">
 

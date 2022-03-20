@@ -16,7 +16,7 @@ class PostFactory extends Factory
         return [
             'name'=>$this->faker->text(30),
             'description'=>$this->faker->text(300),
-            'img'=>$this->faker->image('public/storage/images'.'/images/',640,480, null, false),
+            'img'=>$this->faker->image('public/storage/images',640,480, null, false),
             'category_id' => $this->faker->numberBetween($min = 1, $max = 3),
         ];
     }

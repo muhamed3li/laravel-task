@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -22,7 +23,7 @@ class UsersTableSeeder extends Seeder
         User::create([
             'name' => 'user',
             'email' => 'user@user.com',
-            'password' => bcrypt('demo123'), // password
+            'password' => bcrypt('password'), // password
             'role'=>'user',
         ]);
     }
