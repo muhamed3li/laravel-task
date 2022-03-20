@@ -1,12 +1,12 @@
 ## Laravel 8 Articals Api
 
-**composer install 
+composer install 
 
 cp .enn.example .env
 
 php artisan key:generate
 
-php artisan migrate --seed**
+php artisan migrate --seed
 
 To solve the '/images' path problem, you must add images before the path.
 
