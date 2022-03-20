@@ -2,13 +2,19 @@
 
 composer install 
 
-cp .enn.example .env
+cp .env.example .env
 
 php artisan key:generate
 
-php artisan migrate --seed
+php artisan migrate
 
-To solve the '/images' path problem, you must add images before the path.
+php artisan db:seed
+
+php artisan serve
+
+**To solve the '/images' path problem, you must add images before the path.**
+
+
 
 **Admin account :
 <br>
